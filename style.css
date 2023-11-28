@@ -7,7 +7,7 @@
 
     .today,.tomorrow, #detailBox {
 
-        width: 100% !important ; /* Adjust as needed */
+        width: 100% !important ;
         background-color: #837ba1;
         color: whitesmoke;
         margin: 10px;
