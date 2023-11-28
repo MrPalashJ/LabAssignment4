@@ -1,7 +1,11 @@
+// Function to get location data and display sunrise and sunset information
 function getLocation() {
+    // Get elements from the DOM
     const locationInput = document.getElementById('location');
     const resultDiv = document.getElementById('result');
+    // Get user-inputted location
     const location = locationInput.value;
+    //  if the location is not empty
     if (location != "") {
             // Use Geocode API to get latitude and longitude for the location
     $.ajax({
@@ -67,6 +71,7 @@ function getLocation() {
 
 }
 
+// Function to display sunrise and sunset information
 function displayResults(results, tomorrowResults,location, lat , lon, todayDate, tomorrowDate) {
     const todayBoxDiv = document.getElementById('todayBox');
     todayBoxDiv.innerHTML = `    
@@ -98,6 +103,7 @@ function displayResults(results, tomorrowResults,location, lat , lon, todayDate,
 
 }
 
+// Function to display error messages
 function showError(message) {
     const errorDiv = document.getElementById('errorDiv');
     errorDiv.style.display = "block";

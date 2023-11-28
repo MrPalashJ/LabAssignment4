@@ -1,13 +1,14 @@
+/* Media query for small screens (max-width: 576px) */
 @media (max-width: 576px) { 
     #result {
-        display: grid !important;
+        display: grid !important; /* Use grid layout */
         width: 87%;
-        margin: 20px auto;
+        margin: 20px auto; /* Center the grid */
     }
 
     .today,.tomorrow, #detailBox {
 
-        width: 100% !important ;
+        width: 100% !important ; /* Full width for small screens */
         background-color: #837ba1;
         color: whitesmoke;
         margin: 10px;
@@ -15,6 +16,8 @@
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     }
 }
+
+/* Styles */
 
 body {
     font-family: Arial, sans-serif;
