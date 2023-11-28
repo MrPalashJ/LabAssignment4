@@ -74,7 +74,7 @@ function displayResults(results, tomorrowResults,location, lat , lon, todayDate,
             <p>Sunset: ${results.sunset}</p>
             <p>Dawn: ${results.dawn}</p>
             <p>Dusk: ${results.dusk}</p>
-            <p>Day Length: ${results.day_length} seconds</p>
+            <p>Day Length: ${results.day_length}</p>
             <p>Solar Noon: ${results.solar_noon}</p>
             <p>Time Zone: ${results.timezone}</p> `;
 
@@ -84,7 +84,7 @@ function displayResults(results, tomorrowResults,location, lat , lon, todayDate,
             <p>Sunset: ${tomorrowResults.sunset}</p>
             <p>Dawn: ${tomorrowResults.dawn}</p>
             <p>Dusk: ${tomorrowResults.dusk}</p>
-            <p>Day Length: ${tomorrowResults.day_length} seconds</p>
+            <p>Day Length: ${tomorrowResults.day_length}</p>
             <p>Solar Noon: ${tomorrowResults.solar_noon}</p>
             <p>Time Zone: ${tomorrowResults.timezone}</p>`;
 

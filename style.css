@@ -44,7 +44,8 @@ button {
 .today,.tomorrow, #detailBox {
 
     width: 32%; /* Adjust as needed */
-    background-color: #90b4c6;
+    background-color: #837ba1;
+    color: whitesmoke;
     margin: 10px;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
