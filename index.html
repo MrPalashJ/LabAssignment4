@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sunrise Sunset App</title>
+</head>
+<body>
+    <div id = "imgBox">
+        <img src="images/a.png" width="100px" height="100px">
+        <img src="images/b.png" width="100px" height="100px">
+        </div>
+    <div id="app">
+        <h1>Sunrise Sunset App</h1>
+        <h4>
+        <label for="location">Enter location:</label>
+        </h4>   
+        <input type="text" id="location" placeholder="e.g., New York">
+        <button onclick="getLocation()">Get Sunrise and Sunset</button>
+        <div id="errorDiv"></div>
+        <div id="result">
+            <div class="today">
+                <h2>TODAY</h2>
+                <div id="todayBox"></div>
+            </div>
+            <div id="detailBox">
+                <h2>DETAILS</h2>
+                <div id="details"></div>
+            </div>
+            <div class="tomorrow">
+                <h2>TOMORROW</h2>
+                <div id="tomorrowBox"></div>
+            </div>
+        </div>
+    </div>  
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
