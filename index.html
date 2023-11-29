@@ -1,11 +1,11 @@
-<!-- /**********************************************************************
-* _______            __                      __                 _____            __           
+<!-- /************************
+* ___            _                      _                 __            _           
 *|       \          |  \                    |  \               |     \          |  \          
-*| $$$$$$$\ ______  | $$  ______    _______ | $$____            \$$$$$  ______   \$$ _______  
+*| $$$$$$$\ __  | $$  __    ___ | $$__            \$$$$$  __   \$$ ___  
 *| $$__/ $$|      \ | $$ |      \  /       \| $$    \             | $$ |      \ |  \|       \ 
 *| $$    $$ \$$$$$$\| $$  \$$$$$$\|  $$$$$$$| $$$$$$$\       __   | $$  \$$$$$$\| $$| $$$$$$$\
 *| $$$$$$$ /      $$| $$ /      $$ \$$    \ | $$  | $$      |  \  | $$ /      $$| $$| $$  | $$
-*| $$     |  $$$$$$$| $$|  $$$$$$$ _\$$$$$$\| $$  | $$      | $$__| $$|  $$$$$$$| $$| $$  | $$
+*| $$     |  $$$$$$$| $$|  $$$$$$$ \$$$$$$\| $$  | $$      | $$_| $$|  $$$$$$$| $$| $$  | $$
 *| $$      \$$    $$| $$ \$$    $$|       $$| $$  | $$       \$$    $$ \$$    $$| $$| $$  | $$
 * \$$       \$$$$$$$ \$$  \$$$$$$$ \$$$$$$$  \$$   \$$        \$$$$$$   \$$$$$$$ \$$ \$$   \$$
 * 
@@ -16,7 +16,7 @@
 * 
 * Description: This file uses two api to display sunrise and sunset application for today and tomorrow based on geocode location
 *
-***********************************************************************/ -->
+*************************/ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +36,10 @@
         <label for="location">Enter location:</label>
         </h4>   
         <input type="text" id="location" placeholder="e.g., New York">
-        <button onclick="getLocation()">Get Sunrise and Sunset</button>
+        <div class="btnBox">
+            <button onclick="getLocation()">Get Sunrise and Sunset</button>
+            <button id="currentBtn" onclick="getCurrentLocation()">Get Current Location</button>
+        </div>
         <div id="errorDiv"></div>
         <div id="result">
             <div class="today">

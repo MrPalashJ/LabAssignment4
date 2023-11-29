@@ -1,3 +1,79 @@
+function getCurrentLocation(){
+    navigator.geolocation.getCurrentPosition(success, error);
+}
+
+
+function success(pos) {
+  const crd = pos.coords;
+  let currentLat = crd.latitude;
+  let currentLon = crd.longitude
+
+ $.ajax({
+    url: `https://geocode.maps.co/reverse?lat=`+currentLat+`&lon=`+currentLon,
+    method: 'GET',
+    success: function (geocodeData) {
+        if(geocodeData.length != 0){
+            console.log(JSON.parse(JSON.stringify(geocodeData)))
+            let errorDiv = document.getElementById('errorDiv');
+            errorDiv.style.display = "none";
+             const lat = geocodeData.lat;
+             const lon = geocodeData.lon;
+             const currentLocationName = geocodeData.display_name
+             var todayDate = new Date();
+             todayDate.setHours(0, 0, 0, 0); 
+             var todayDateFormatted = todayDate.toISOString().split('T')[0];
+             
+            // Use Sunrise-Sunset API to get sunrise and sunset data
+            $.ajax({
+                url: `https://api.sunrisesunset.io/json?lat=` + lat + `&lng=` + lon + `&date=` +todayDateFormatted,
+                method: 'GET',
+                success: function (todayData) {
+                    console.log(JSON.parse(JSON.stringify(todayData)));
+                    const todayResults = todayData.results;
+
+                     // Calculate the date for tomorrow
+                     
+                     var tomorrowDate = new Date(todayDate);
+                     tomorrowDate.setDate(todayDate.getDate() + 1);
+                     var tomorrowDate = tomorrowDate.toISOString().split('T')[0];
+                    // Use Sunrise-Sunset API to get sunrise and sunset data for tomorrow
+                    $.ajax({
+                        url: `https://api.sunrisesunset.io/json?lat=` + lat + `&lng=` + lon + `&date=` +tomorrowDate,
+                        method: 'GET',
+                        success: function (tomorrowData) {
+                            console.log(JSON.parse(JSON.stringify(tomorrowData)));
+                            const tomorrowResults = tomorrowData.results;
+
+                            // Display results for today and tomorrow
+                            displayResults(todayResults, tomorrowResults, currentLocationName, lat, lon, todayDateFormatted, tomorrowDate);
+                        },
+                        error: function (error) {
+                            showError("Error fetching tomorrow's sunrise and sunset data.");
+                        }
+                    });
+                },
+                error: function (error) {
+                    showError("Error fetching today's sunrise and sunset data.");
+                }
+            });
+        }
+        else{
+            showError("Location not found !!")
+        }
+    },
+    error: function (error) {
+        showError("Error fetching location data.");
+    }
+});
+
+}
+
+
+function error(err) {
+  console.log(`ERROR(${err.code}): ${err.message}`);
+}
+
+
 // Function to get location data and display sunrise and sunset information
 function getLocation() {
     // Get elements from the DOM

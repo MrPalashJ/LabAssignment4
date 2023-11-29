@@ -4,6 +4,7 @@
         display: grid !important; /* Use grid layout */
         width: 87%;
         margin: 20px auto; /* Center the grid */
+        justify-content: center !important;
     }
 
     .today,.tomorrow, #detailBox {
@@ -14,6 +15,11 @@
         margin: 10px;
         border-radius: 8px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #currentBtn{
+        margin-top: 15px;
+        width: 70%;
     }
 }
 
